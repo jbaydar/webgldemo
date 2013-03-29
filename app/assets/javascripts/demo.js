@@ -23,9 +23,3 @@ function add_ring() {
   clear_div()
   $('#main').load('ring');
 }
-
-function add_two() {
-  clear_div()
-  $('#main').load('ring');
-  $('#main').load('chain');
-}
