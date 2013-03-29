@@ -1,0 +1,45 @@
+<script>
+var camera, scene, renderer, mesh, loader;
+
+init();
+animate();
+
+function init() {
+    camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 1, 10000 );
+    camera.position.z = 1000;
+
+    scene = new THREE.Scene();
+    loader = new THREE.JSONLoader();
+    var material = new THREE.MeshBasicMaterial({color: 0x109510});
+
+    loader.load( "chain.js", function( geometry ) {
+        mesh = new THREE.Mesh( geometry, material );
+        mesh.scale.set( 15, 15, 15 );
+        mesh.position.y = 0;
+        mesh.position.x = 100;
+        scene.add( mesh );
+    } );
+
+    var ambientLight = new THREE.AmbientLight(0xffffff);
+    scene.add(ambientLight);
+
+    var directionalLight = new THREE.DirectionalLight(0xffffff);
+    directionalLight.position.set(1, 1, 1).normalize();
+    scene.add(directionalLight);
+
+    renderer = new THREE.WebGLRenderer();
+    renderer.setSize( window.innerWidth, window.innerHeight );
+
+    document.body.appendChild( renderer.domElement );
+  }
+
+  function animate() {
+    requestAnimationFrame( animate );
+
+    mesh.rotation.x += 0.05;
+    // mesh.rotation.y += 0.05;
+
+    renderer.render( scene, camera );
+  }
+  THREEx.WindowResize(renderer, camera);
+</script>
