@@ -9,17 +9,7 @@ function clear_div() {
   delete window.animate;
 }
 
-function add_cube() {
+function add_demo(demo) {
   clear_div()
-  $('#main').load('cube');
-}
-
-function add_chain() {
-  clear_div()
-  $('#main').load('chain');
-}
-
-function add_ring() {
-  clear_div()
-  $('#main').load('ring');
+  $('#main').load(demo);
 }

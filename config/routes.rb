@@ -3,4 +3,5 @@ Webgldemo::Application.routes.draw do
   match '/cube' => 'home#cube'
   match '/chain' => 'home#chain'
   match '/ring' => 'home#ring'
+  match '/sphere' => 'home#sphere'
 end

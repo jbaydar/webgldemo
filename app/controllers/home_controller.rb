@@ -7,4 +7,6 @@ class HomeController < ApplicationController
   end
   def ring
   end
+  def sphere
+  end
 end
