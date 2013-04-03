@@ -3,3 +3,7 @@
  *= require 'foundation/css/foundation.min.css'
  *= require_self
  */
+
+ h1, h3, h5, h6 {
+  text-align: center;
+ }
