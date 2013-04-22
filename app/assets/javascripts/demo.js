@@ -7,6 +7,10 @@ function clear_div() {
   delete window.camera;
   delete window.loader;
   delete window.animate;
+  if (window.requestAnimationFrame) {
+    window.requestAnimationFrame = undefined;
+  }
+
 }
 
 function add_demo(demo) {
